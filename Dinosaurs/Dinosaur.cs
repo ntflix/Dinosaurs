@@ -3,7 +3,7 @@
 public class Dinosaur
 {
 	private Era _era;
-	public String Era { get { return _era.ToString(); } }
+	public String Era { get => _era.ToString(); }
 
 	public String? Name { get; set; }
 
