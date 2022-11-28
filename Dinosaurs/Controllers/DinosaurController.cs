@@ -48,4 +48,14 @@ public class DinosaurController: ControllerBase {
     public IEnumerable<Dinosaur> Get() {
         return Dinosaurs;
     }
+
+    [HttpGet("{name}")]
+    public Dinosaur? GetByName(String name) {
+        return Dinosaurs.FirstOrDefault(dinosaur => dinosaur.Name == name);
+    }
+
+    [HttpGet("era/{era}")]
+    public IEnumerable<Dinosaur> Get(String era) {
+        return Dinosaurs.Where(dinosaur => dinosaur.Era == era);
+    }
 }
